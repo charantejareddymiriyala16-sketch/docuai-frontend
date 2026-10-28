@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d12">
+  <title>DocuAI — AI Document Workspace</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+        <span>Docu<span class="brand-accent">AI</span></span>
+      </div>
+
+      <button id="newChat" class="new-chat">
+        <span>＋</span> New chat
+      </button>
+
+      <div class="sidebar-label">YOUR WORKSPACE</div>
+      <div class="sidebar-link active">✧ <span>Document assistant</span></div>
+
+      <div class="sidebar-label recent-label">RECENT CHATS</div>
+      <div id="history" class="history">
+        <div class="empty-history">Your conversations will appear here.</div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div>
+          <strong>DocuAI workspace</strong>
+          <small>AI document assistant</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span class="slash">/</span><strong>Document assistant</strong></div>
+        <div class="online-pill"><span></span> AI workspace</div>
+      </header>
+
+      <section class="workspace">
+        <div class="welcome">
+          <div class="eyebrow"><span class="sparkle">✦</span> YOUR PERSONAL AI WORKSPACE</div>
+          <h1>Your documents.<br><span>Understood.</span></h1>
+          <p>Turn long documents into clear insights. Upload a file, get a summary, and ask questions in seconds.</p>
+        </div>
+
+        <section class="upload-card">
+          <div class="upload-card-heading">
+            <div class="upload-icon">↥</div>
+            <div>
+              <h2>Upload your document</h2>
+              <p>Start a conversation with your files</p>
+            </div>
+          </div>
+
+          <label class="dropzone" for="fileInput">
+            <div class="file-icon">↥</div>
+            <strong>Choose a file to get started</strong>
+            <span>PDF, DOCX or TXT · Maximum 10 MB</span>
+            <span class="choose-file">Browse files</span>
+            <input id="fileInput" type="file" accept=".pdf,.docx,.txt">
+          </label>
+
+          <div id="fileInfo" class="file-info" hidden></div>
+          <button id="summarizeBtn" class="primary-button" disabled>
+            <span>✦</span> Summarize document <span>→</span>
+          </button>
+          <div id="status" class="status-message" role="status"></div>
+        </section>
+
+        <section id="resultCard" class="result-card" hidden>
+          <div class="result-heading">
+            <div>
+              <div class="eyebrow">DOCUMENT INSIGHTS</div>
+              <h2 id="resultTitle">Your summary</h2>
+            </div>
+            <button id="copySummary" class="secondary-button">Copy summary</button>
+          </div>
+          <div id="summary" class="summary-content"></div>
+        </section>
+
+        <section id="chatCard" class="chat-card" hidden>
+          <div class="chat-heading">
+            <div class="chat-avatar">✦</div>
+            <div><h2>Ask your document</h2><p>Answers grounded in your uploaded file</p></div>
+          </div>
+          <div id="messages" class="messages"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="questionInput" type="text" placeholder="Ask anything about your document..." autocomplete="off">
+            <button type="submit" aria-label="Send question">↑</button>
+          </form>
+          <p class="privacy-note">AI can make mistakes. Verify important information.</p>
+        </section>
+
+        <footer class="footer">
+          <span>✦ DocuAI</span>
+          <span>Less reading. More understanding.</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
